@@ -44,4 +44,16 @@ router.post('/addSongs', async(req,res)=> {
     }
 });
 
+//play songs
+router.get('/:songId/play', (req,res)=> {
+    const songId = req.params.songId
+
+    const song = Song.findById(songId)
+    if(!song){
+        return res.status(404).json({message: "Song not found"})
+    }
+
+    res.sendFile(__dirname + song.audio)
+})
+
 module.exports = router
