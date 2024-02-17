@@ -3,7 +3,7 @@ const MONGO_URI = 'mongodb+srv://cythakuria:maisgreat@cluster0.tyzy6lo.mongodb.n
 
 mongoose.connect(MONGO_URI)
 .then(()=> {
-    console.log('MongoDB coneected successfully')
+    console.log('MongoDB connected successfully')
 })
 .catch((error)=> {
     console.log('Connection not established'+error)
